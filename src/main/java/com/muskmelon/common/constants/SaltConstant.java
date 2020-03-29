@@ -10,7 +10,7 @@ public class SaltConstant {
 
     public static final String MD5 = "MD5";
 
-    public static final String HMACSHA256 = "HmacSHA256";
+    public static final String HMACSHA256 = "HMAC-SHA256";
 
 
 

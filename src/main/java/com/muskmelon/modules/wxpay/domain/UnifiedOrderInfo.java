@@ -13,31 +13,31 @@ import com.muskmelon.common.annotion.CheckForRequired;
 public class UnifiedOrderInfo {
 
     /**
-     * （必填）公众账号ID
+     * 公众账号ID
      */
     @Check(required = true)
     private String appid;
 
     /**
-     * （必填）商户号
+     * 商户号
      */
     @Check(required = true)
     private String mch_id;
 
     /**
-     * （必填）设备号
+     * 设备号
      */
     @Check(required = true)
     private String device_info;
 
     /**
-     * （必填）随机字符串
+     * 随机字符串
      */
     @Check(required = true)
     private String nonce_str;
 
     /**
-     * （必填）签名
+     * 签名
      */
     @Check(required = true)
     private String sign;
@@ -45,11 +45,10 @@ public class UnifiedOrderInfo {
     /**
      * 签名类型
      */
-    @Check(required = true)
     private String sign_type;
 
     /**
-     * （必填）商品描述
+     * 商品描述
      */
     @Check(required = true)
     private String body;
@@ -65,7 +64,7 @@ public class UnifiedOrderInfo {
     private String attach;
 
     /**
-     * （必填）商户订单号
+     * 商户订单号
      */
     @Check(required = true)
     private String out_trade_no;
@@ -76,13 +75,13 @@ public class UnifiedOrderInfo {
     private String fee_type;
 
     /**
-     * （必填）总金额，单位：分
+     * 总金额，单位：分
      */
     @Check(required = true)
     private Integer total_fee;
 
     /**
-     * （必填）终端IP
+     * 终端IP
      */
     @Check(required = true)
     private String spbill_create_ip;
@@ -103,13 +102,13 @@ public class UnifiedOrderInfo {
     private String goods_tag;
 
     /**
-     * （必填）通知地址
+     * 通知地址
      */
     @Check(required = true)
     private String notify_url;
 
     /**
-     * （必填）交易类型
+     * 交易类型
      */
     @Check(required = true)
     private String trade_type;
@@ -135,7 +134,7 @@ public class UnifiedOrderInfo {
     private String receipt;
 
     /**
-     * （必填）场景信息
+     * 场景信息
      */
     @Check(required = true)
     private String scene_info;

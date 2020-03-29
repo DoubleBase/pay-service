@@ -1,5 +1,6 @@
 package com.muskmelon.modules.wxpay.util;
 
+import com.google.common.collect.Maps;
 import com.muskmelon.common.enums.SignType;
 import com.muskmelon.common.util.HmacSHA256;
 import com.muskmelon.common.util.MD5Util;
@@ -153,5 +154,39 @@ public class WeChatPayUtil {
     public static String generateNonceStr() {
         return UUID.randomUUID().toString().replaceAll("-", "").substring(0, 32);
     }
+
+    /**
+     * 格式化请求返回结果
+     *
+     * @param resultMap
+     */
+    public static Map<String, String> convertResult(Map<String, String> resultMap) {
+        Map<String, String> map = Maps.newHashMap();
+        for (Map.Entry<String, String> entry : resultMap.entrySet()) {
+            String value = convertCDATA(entry.getValue());
+            map.put(entry.getKey(), value);
+        }
+        return map;
+    }
+
+    /**
+     * 提取<![CDATA[xxx]]>格式中的数据
+     *
+     * @param data 待提取的数据
+     * @return
+     */
+    public static String convertCDATA(String data) {
+        return data.replace("<![CDATA[", "").replace("]]>", "");
+    }
+
+    /**
+     * 将数据组装进<![CDATA[]]>中
+     * @param data
+     * @return
+     */
+    public static String appendCDATA(String data){
+        return "<![CDATA[" + data + "]]>";
+    }
+
 
 }

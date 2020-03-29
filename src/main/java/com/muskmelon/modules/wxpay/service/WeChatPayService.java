@@ -1,5 +1,6 @@
 package com.muskmelon.modules.wxpay.service;
 
+import com.muskmelon.modules.wxpay.domain.OrderQueryInfo;
 import com.muskmelon.modules.wxpay.domain.UnifiedOrderInfo;
 
 /**
@@ -12,7 +13,14 @@ public interface WeChatPayService {
 
     /**
      * 统一下单
+     * @param unifiedOrderInfo 入参
      */
     void unifiedOrder(UnifiedOrderInfo unifiedOrderInfo);
+
+    /**
+     * 查询订单
+     * @param orderQueryInfo 入参
+     */
+    void orderQuery(OrderQueryInfo orderQueryInfo);
 
 }
